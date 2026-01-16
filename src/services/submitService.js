@@ -1,7 +1,15 @@
 import axios from 'axios';
 
+// const http = axios.create({
+//     baseURL: "http://localhost:3000",
+//     headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//     }
+// });
+
 const http = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://aquadocinc.org/backend",
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
