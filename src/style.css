@@ -82,7 +82,7 @@ html, body {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #ffffff;
+    color: rgb(0, 0, 0);
     background-color: #ffffff;
   }
   a:hover {
