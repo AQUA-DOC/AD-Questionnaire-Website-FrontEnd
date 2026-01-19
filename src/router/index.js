@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../views/HomePage.vue'
+import RedirectHome from '../views/RedirectHome.vue'
 import RequestReportPage from '../views/RequestReportPage.vue'
 
 const router = createRouter({
@@ -8,7 +8,7 @@ const router = createRouter({
         {
             path: '/',
             name: 'home-page',
-            component: HomePage,
+            component: RedirectHome,
             props: route => ({})
         },
         {

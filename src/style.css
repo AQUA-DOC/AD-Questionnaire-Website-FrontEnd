@@ -32,7 +32,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 h1 {
@@ -67,6 +67,16 @@ button:focus-visible {
   max-width: 1280px;
   margin: 0 0;
   text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(
+  135deg,
+  rgb(0, 120, 200) 0%,
+  rgb(0, 95, 170) 50%,
+  rgb(0, 70, 140) 100%
+);
+}
+@supports (height: 100dvh) {
+  #app { min-height: 100dvh; }
 }
 
 @media (prefers-color-scheme: light) {
@@ -81,3 +91,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+

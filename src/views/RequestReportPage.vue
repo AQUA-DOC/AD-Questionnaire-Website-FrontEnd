@@ -341,8 +341,8 @@ export default {
 }
 
 .single-page {
-  height: 99vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
