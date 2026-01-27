@@ -134,17 +134,37 @@
   overflow: auto;
 }
 
-.radio-group {
+/* .radio-group {
   display: flex;
+  flex-direction: row;
   gap: 16px;
   margin-top: 6px;
 }
 
 .radio {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 6px;
   font-weight: 500;
+  cursor: pointer;
+  border: solid red 1px;
+} */
+
+.radio-group {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 24px;
+  margin-top: 6px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
   cursor: pointer;
 }
 
