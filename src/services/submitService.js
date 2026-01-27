@@ -1,36 +1,26 @@
 import axios from 'axios';
 
-// const http = axios.create({
-//     baseURL: "http://localhost:3000",
-//     headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//     }
-// });
-
+// Uncommend for local testing
 const http = axios.create({
-    baseURL: "https://aquadocinc.org/backend",
+    baseURL: "http://localhost:3000/backend",
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     }
 });
 
-/* Returns All Pages */
-// async function getAllPageContent() {
-//     return http.get('/content')
-//             .then(response => {
-//                 if (response.data.status !== 200) {
-//                     console.log("Error encountered in getAllPageContent");
-//                     return;
-//                 } else {
-//                     return response.data.message;
-//                 }
-//             });
-// }
+// Uncomment for Production
+// const http = axios.create({
+//     baseURL: "https://aquadocinc.org/backend",
+//     headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//     }
+// });
 
 
-// This is the one I'll use - above are examples.
+
+// Submit a report-request
 async function submitReportRequest(data) {
     return http.post("/submit/report-request", data)
         .then(response => {
@@ -43,14 +33,7 @@ async function submitReportRequest(data) {
         });
 }
 
-// async function submitReportRequest(data) {
-//     let response = {
-//         "status": 200
-//     }
-//     console.log(data)
-//     console.log("submit service here")
-//     return response;
-// }
+
 
 
 

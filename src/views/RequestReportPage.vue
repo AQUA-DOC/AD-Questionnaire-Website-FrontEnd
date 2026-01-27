@@ -176,6 +176,7 @@ export default {
         // Step 3
         intendedUse: "",
         delivery: "",
+        messageType: "report-request"
       },
     };
   },
@@ -247,12 +248,6 @@ export default {
         submittedAt: new Date().toISOString(),
       };
 
-      // Option A: emit to parent
-    //   this.$emit("submit", payload);
-
-      // Option B: route somewhere / call API here instead
-      // Example placeholder:
-      // await fetch('/api/report-requests', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) })
       submitReportRequest(payload)
         .then(status => {
             console.log("Response is back33")
@@ -276,18 +271,6 @@ export default {
         });
 
       console.log("Report Request Submitted:", payload);
-
-      // Show success modal
-        // this.showSuccess = true;
-
-        // After 5 seconds, reset everything
-        // setTimeout(() => {
-        //     this.showSuccess = false;
-        //     this.resetForm();
-        // }, 5000);
-
-      // Optional: reset form after submit
-      // this.resetForm();
     },
 
     resetForm() {
@@ -304,7 +287,8 @@ export default {
             delivery: "",
             needsBackfill: false,
             backfillDetails: "",
-            reportQuestion: ""
+            reportQuestion: "",
+            messageType: "report-request"
         };
     },
   },
