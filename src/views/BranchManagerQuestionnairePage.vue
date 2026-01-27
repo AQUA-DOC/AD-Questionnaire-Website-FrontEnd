@@ -556,4 +556,189 @@ submit() {
 }
 
 
+.field--narrow select {
+  width: auto;
+  min-width: 220px;
+  max-width: 280px;
+}
+
+
+.field-row input,
+.field-row textarea,
+.field-row select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0px;
+  width: auto;
+  white-space: wrap;
+  margin-top: 5px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, #3fbf6f, #2fa45a);
+  border: 1px solid #2a8f52;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(47, 164, 90, 0.35);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.btn.secondary {
+  opacity: 0.85;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.review pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.radio input[type='radio'] {
+  cursor: pointer;
+  accent-color: #222; /* modern browsers */
+}
+
+.field textarea {
+  margin-top: 10px;
+}
+
+/* =========================
+   TABLET (<= 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+  .single-page {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .form {
+    gap: 12px;
+  }
+
+  .field-row label {
+    width: 32%;
+    justify-content: flex-start;
+    margin-right: 8px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 10px 12px;
+  }
+}
+
+/* =========================
+   PHONE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  .single-page {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .field-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-row label {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 0;
+    padding-left: 2px;
+    white-space: normal;
+  }
+
+  .field input,
+  .field textarea,
+  .field select,
+  .field-row input,
+  .field-row textarea,
+  .field-row select {
+    font-size: 16px; /* prevents iOS zoom on focus */
+    padding: 12px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  .radio-group {
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .review pre {
+    max-height: 220px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES (<= 360px)
+   ========================= */
+@media (max-width: 360px) {
+  .single-page {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 12px;
+  }
+}
+
+
+
 </style>

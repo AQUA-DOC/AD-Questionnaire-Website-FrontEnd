@@ -296,7 +296,9 @@ export default {
 </script>
 
 <style>
-  
+
+
+
 .field-row label {
   display: flex;
   font-weight: 600;
@@ -306,6 +308,207 @@ export default {
   white-space: nowrap;
   margin-top: 6px;
   margin-right: 4px;
+}
+
+.field-row input,
+.field-row textarea,
+.field-row select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0px;
+  width: auto;
+  white-space: wrap;
+  margin-top: 5px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+
+
+
+.btn.primary {
+  background: linear-gradient(180deg, #3fbf6f, #2fa45a);
+  border: 1px solid #2a8f52;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(47, 164, 90, 0.35);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.btn.secondary {
+  opacity: 0.85;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+
+.review pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+
+.radio input[type="radio"] {
+  cursor: pointer;
+  accent-color: #222; /* modern browsers */
+}
+
+.field textarea {
+  margin-top: 10px;
+}
+
+/* =========================
+   TABLET (<= 1024px)
+   - Slightly tighter spacing
+   - Card uses more width
+   - Field-row label gets a bit wider
+   ========================= */
+@media (max-width: 1024px) {
+  .single-page {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .form {
+    gap: 12px;
+  }
+
+  .field-row label {
+    width: 32%;
+    justify-content: flex-start;
+    margin-right: 8px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 10px 12px;
+  }
+}
+
+/* =========================
+   PHONE (<= 600px)
+   - Switch field-row to stacked layout
+   - Larger tap targets
+   - Buttons full-width
+   ========================= */
+@media (max-width: 600px) {
+  .single-page {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  /* Stack label above input */
+  .field-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-row label {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 0;
+    padding-left: 2px;
+    white-space: normal; /* allow wrap on small screens */
+  }
+
+  .field input,
+  .field textarea,
+  .field select,
+  .field-row input,
+  .field-row textarea,
+  .field-row select {
+    font-size: 16px; /* prevents iOS zoom on focus */
+    padding: 12px;
+  }
+
+  /* Buttons become stacked and easy to tap */
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  /* Radio buttons stack nicely */
+  .radio-group {
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Review block scroll feels better on small screens */
+  .review pre {
+    max-height: 220px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES (<= 360px)
+   - Extra-tight padding
+   ========================= */
+@media (max-width: 360px) {
+  .single-page {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 12px;
+  }
 }
 
 </style>
