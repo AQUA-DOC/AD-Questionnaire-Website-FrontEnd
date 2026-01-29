@@ -4,6 +4,7 @@ import RequestReportPage from '../views/RequestReportPage.vue'
 import BranchManagerQuestionnairePage from '../views/BranchManagerQuestionnairePage.vue'
 import RegionalManagerQuestionnairePage from '../views/RegionalManagerQuestionnairePage.vue'
 import FinanceTeamQuestionnairePage from '../views/FinanceTeamQuestionnairePage.vue'
+import ClientCareTeamQuestionnairePage from '../views/ClientCareTeamQuestionnairePage.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,12 @@ const router = createRouter({
             path: '/finance-team-questionnaire',
             name: 'finance-team-questions-page',
             component: FinanceTeamQuestionnairePage,
+            props: route => ({})
+        },
+        {
+            path: '/client-care-questionnaire',
+            name: 'client-care-questions-page',
+            component: ClientCareTeamQuestionnairePage,
             props: route => ({})
         }
     ]
