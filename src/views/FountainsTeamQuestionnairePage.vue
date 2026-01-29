@@ -1,10 +1,10 @@
 <template>
   <div class="single-page">
     <div class="card">
-      <h1>Client Care Questions</h1>
+      <h1>Fountains Team Questions</h1>
 
       <!-- Simple step indicator -->
-      <p class="step">Step {{ step }} of 5</p>
+      <p class="step">Step {{ step }} of 6</p>
 
       <!-- Success Popup -->
       <div v-if="showSuccess" class="">
@@ -45,80 +45,134 @@
         </div>
       </div>
 
-      <!-- VIEW 2 (Customer Calls) -->
+      <!-- VIEW 2 (Systems) -->
       <div v-else-if="step === 2" class="form">
         <div class="field">
-          <label>What is the most common reason a client calls the office?</label>
+          <label>
+            What types of fountain or aeration systems do you work with most often?
+            (Brands, sizes, system types, etc.)
+          </label>
           <textarea
-            v-model.trim="form.mostCommonCallReason"
-            rows="4"
-            placeholder="Example: billing, service questions, scheduling, complaints, etc."
+            v-model.trim="form.systemTypes"
+            rows="5"
+            placeholder="Brands, sizes, horsepower ranges, aeration types, etc."
           />
         </div>
 
         <div class="field">
-          <label>What are some other reasons clients call the office?</label>
+          <label>What are the most common issues or failures you see with these systems?</label>
           <textarea
-            v-model.trim="form.otherCallReasons"
-            rows="4"
-            placeholder="List other frequent call topics."
+            v-model.trim="form.commonFailures"
+            rows="5"
+            placeholder="Common breakdowns, maintenance needs, installation problems, environmental issues, etc."
           />
         </div>
 
         <div class="field">
-          <label>What are some client questions you are NOT able to answer yourself?</label>
+          <label>
+            Do any of these failures or issues happen in regular intervals?
+            (Example: seals fail roughly every 2 years)
+          </label>
           <textarea
-            v-model.trim="form.questionsCantAnswer"
+            v-model.trim="form.failureIntervals"
             rows="4"
-            placeholder="What questions require escalation or extra research?"
+            placeholder="If yes, what failures and how often?"
           />
         </div>
       </div>
 
-      <!-- VIEW 3 (New Customers) -->
+      <!-- VIEW 3 (Inventory) -->
       <div v-else-if="step === 3" class="form">
         <div class="field">
-          <label>When someone who isn't an existing customer calls, what information do you need from them?</label>
+          <label>
+                How do you currently know:
+                <ul>
+                <li>What parts are available?</li>
+                <li>Where they are located?</li>
+                <li>Whether they are already allocated to a job?</li>
+                </ul>
+            </label>
           <textarea
-            v-model.trim="form.newCustomerInfoNeeded"
-            rows="5"
-            placeholder="Contact info, address, waterbody details, goals, urgency, etc."
+            v-model.trim="form.inventoryVisibility"
+            rows="6"
+            placeholder="Describe your current process (systems, spreadsheets, conversations, physical checks, etc.)."
           />
         </div>
 
         <div class="field">
-          <label>What questions do you ask about the service being requested?</label>
+          <label>Are there parts you regularly run out of or don't have when you need them?</label>
           <textarea
-            v-model.trim="form.serviceQuestionsAsked"
-            rows="5"
-            placeholder="What do you ask to understand what they need and route it correctly?"
-          />
-        </div>
-
-        <div class="field">
-          <label>Are you able to schedule the consultation before hanging up with the customer?</label>
-          <div class="radio-group">
-            <label class="radio">
-              <input type="radio" value="true" v-model="form.canScheduleConsultation" />
-              Yes
-            </label>
-            <label class="radio">
-              <input type="radio" value="false" v-model="form.canScheduleConsultation" />
-              No
-            </label>
-          </div>
-
-          <textarea
-            v-if="form.canScheduleConsultation === 'false'"
-            v-model.trim="form.consultationSchedulingBlockers"
+            v-model.trim="form.partsRunOut"
             rows="4"
-            placeholder="If no, what prevents it? (availability, process, info missing, tools, etc.)"
+            placeholder="Which parts? How often? What usually causes the shortage?"
+          />
+        </div>
+
+        <div class="field">
+          <label>
+            What role do you play in transferring inventory between AQUA DOC locations?
+            <ul>
+                <li>When sending inventory to another location?</li>
+                <li>When receiving inventory from another location?</li>
+            </ul>
+          </label>
+          <textarea
+            v-model.trim="form.inventoryTransfersRole"
+            rows="6"
+            placeholder="Walk through the sending/receiving process and what you do (or wish happened)."
           />
         </div>
       </div>
 
-      <!-- VIEW 4 (RealGreen) -->
+      <!-- VIEW 4 (Quotes) -->
       <div v-else-if="step === 4" class="form">
+        <div class="field">
+          <label>
+            Are there items that are frequently missed or underestimated in fountain/aerator quotes?
+            (Labor, Electrical, Parts, Shipping, Permits, Other)
+          </label>
+          <textarea
+            v-model.trim="form.quoteMisses"
+            rows="6"
+            placeholder="What gets missed? Why does it get missed?"
+          />
+        </div>
+
+        <div class="field">
+          <label>
+            How often do quotes need to be revised after work begins?
+            Why does that usually happen?
+          </label>
+          <textarea
+            v-model.trim="form.quoteRevisions"
+            rows="5"
+            placeholder="Frequency + typical causes (unknown site conditions, scope changes, parts, access, etc.)"
+          />
+        </div>
+
+        <div class="field">
+          <label>
+            Do you feel like the fountains department should be more involved in fountain / aeration system quotes?
+          </label>
+          <textarea
+            v-model.trim="form.moreInvolvedInQuotes"
+            rows="5"
+            placeholder="Yes/no and why. What involvement would help most?"
+          />
+        </div>
+
+        <div class="field">
+          <label>What information do you wish was always confirmed before a fountain or aeration job is scheduled?</label>
+          <textarea
+            v-model.trim="form.preScheduleInfo"
+            rows="5"
+            placeholder="Example: site access, electrical details, measurements, model/serial, depth, expectations, approvals, etc."
+          />
+        </div>
+      </div>
+
+      <!-- VIEW 5 (RealGreen) -->
+      <div v-else-if="step === 5" class="form">
         <div class="field">
           <label>In your opinion, what are the most useful parts of RealGreen today?</label>
           <textarea
@@ -153,21 +207,21 @@
           <textarea
             v-model.trim="form.accountInfoToKnow"
             rows="5"
-            placeholder="Example: special instructions, preferences, past issues, pets, access constraints, etc."
+            placeholder="Example: special instructions, access constraints, electrical notes, past failures, preferences, etc."
           />
         </div>
 
         <div class="field">
-          <label>From your perspective, how could the client care team provide a better customer experience?</label>
+          <label>From your perspective, how could the fountains team provide a better customer experience?</label>
           <textarea
-            v-model.trim="form.clientCareBetterExperience"
+            v-model.trim="form.fountainsBetterExperience"
             rows="4"
             placeholder="What changes would improve speed, clarity, trust, or satisfaction?"
           />
         </div>
       </div>
 
-      <!-- VIEW 5 -->
+      <!-- VIEW 6 -->
       <div v-else class="form">
         <div class="field" v-if="!showSuccess && error.length == 0">
           <label>Would you like to meet in person to go over anything specific?</label>
@@ -207,7 +261,7 @@
         </button>
 
         <button
-          v-if="step < 5"
+          v-if="step < 6"
           class="btn primary"
           @click="nextStep"
           :disabled="!canGoNext"
@@ -234,7 +288,7 @@
 import { submitReportRequest } from '../services/submitService';
 
 export default {
-  name: 'client-care-questions-page',
+  name: 'fountains-team-questions-page',
   props: [],
 
   data() {
@@ -249,30 +303,35 @@ export default {
         tenure: '',
         positionFocus: '',
 
-        // Page 2 (Customer Calls)
-        mostCommonCallReason: '',
-        otherCallReasons: '',
-        questionsCantAnswer: '',
+        // Page 2 (Systems)
+        systemTypes: '',
+        commonFailures: '',
+        failureIntervals: '',
 
-        // Page 3 (New Customers)
-        newCustomerInfoNeeded: '',
-        serviceQuestionsAsked: '',
-        canScheduleConsultation: 'false',
-        consultationSchedulingBlockers: '',
+        // Page 3 (Inventory)
+        inventoryVisibility: '',
+        partsRunOut: '',
+        inventoryTransfersRole: '',
 
-        // Page 4 (RealGreen)
+        // Page 4 (Quotes)
+        quoteMisses: '',
+        quoteRevisions: '',
+        moreInvolvedInQuotes: '',
+        preScheduleInfo: '',
+
+        // Page 5 (RealGreen)
         realGreenUseful: '',
         realGreenFrustrations: '',
         realGreenMissing: '',
         accountInfoToKnow: '',
-        clientCareBetterExperience: '',
+        fountainsBetterExperience: '',
 
-        // Page 5
+        // Page 6
         meetInPerson: 'false',
         meetInPersonDetails: '',
         otherInput: '',
 
-        messageType: 'client-care-questions',
+        messageType: 'fountains-team-questions',
       },
     };
   },
@@ -289,32 +348,36 @@ export default {
 
       if (this.step === 2) {
         return (
-          this.form.mostCommonCallReason.length > 0 &&
-          this.form.otherCallReasons.length > 0 &&
-          this.form.questionsCantAnswer.length > 0
+          this.form.systemTypes.length > 0 &&
+          this.form.commonFailures.length > 0 &&
+          this.form.failureIntervals.length > 0
         );
       }
 
       if (this.step === 3) {
-        const blockersOk =
-          this.form.canScheduleConsultation === 'true' ||
-          this.form.consultationSchedulingBlockers.trim().length > 0;
-
         return (
-          this.form.newCustomerInfoNeeded.length > 0 &&
-          this.form.serviceQuestionsAsked.length > 0 &&
-          this.form.canScheduleConsultation.length > 0 &&
-          blockersOk
+          this.form.inventoryVisibility.length > 0 &&
+          this.form.partsRunOut.length > 0 &&
+          this.form.inventoryTransfersRole.length > 0
         );
       }
 
       if (this.step === 4) {
         return (
+          this.form.quoteMisses.length > 0 &&
+          this.form.quoteRevisions.length > 0 &&
+          this.form.moreInvolvedInQuotes.length > 0 &&
+          this.form.preScheduleInfo.length > 0
+        );
+      }
+
+      if (this.step === 5) {
+        return (
           this.form.realGreenUseful.length > 0 &&
           this.form.realGreenFrustrations.length > 0 &&
           this.form.realGreenMissing.length > 0 &&
           this.form.accountInfoToKnow.length > 0 &&
-          this.form.clientCareBetterExperience.length > 0
+          this.form.fountainsBetterExperience.length > 0
         );
       }
 
@@ -322,10 +385,6 @@ export default {
     },
 
     canSubmit() {
-      const blockersOk =
-        this.form.canScheduleConsultation === 'true' ||
-        this.form.consultationSchedulingBlockers.trim().length > 0;
-
       const meetDetailsOk =
         this.form.meetInPerson === 'false' || this.form.meetInPersonDetails.trim().length > 0;
 
@@ -335,20 +394,25 @@ export default {
         this.form.tenure.length > 0 &&
         this.form.positionFocus.length > 0 &&
         // Step 2
-        this.form.mostCommonCallReason.length > 0 &&
-        this.form.otherCallReasons.length > 0 &&
-        this.form.questionsCantAnswer.length > 0 &&
+        this.form.systemTypes.length > 0 &&
+        this.form.commonFailures.length > 0 &&
+        this.form.failureIntervals.length > 0 &&
         // Step 3
-        this.form.newCustomerInfoNeeded.length > 0 &&
-        this.form.serviceQuestionsAsked.length > 0 &&
-        blockersOk &&
+        this.form.inventoryVisibility.length > 0 &&
+        this.form.partsRunOut.length > 0 &&
+        this.form.inventoryTransfersRole.length > 0 &&
         // Step 4
+        this.form.quoteMisses.length > 0 &&
+        this.form.quoteRevisions.length > 0 &&
+        this.form.moreInvolvedInQuotes.length > 0 &&
+        this.form.preScheduleInfo.length > 0 &&
+        // Step 5
         this.form.realGreenUseful.length > 0 &&
         this.form.realGreenFrustrations.length > 0 &&
         this.form.realGreenMissing.length > 0 &&
         this.form.accountInfoToKnow.length > 0 &&
-        this.form.clientCareBetterExperience.length > 0 &&
-        // Step 5
+        this.form.fountainsBetterExperience.length > 0 &&
+        // Step 6
         this.form.meetInPerson.length > 0 &&
         meetDetailsOk
         // otherInput is optional
@@ -363,7 +427,7 @@ export default {
         this.error = 'Please fill out the required fields before continuing.';
         return;
       }
-      this.step = Math.min(5, this.step + 1);
+      this.step = Math.min(6, this.step + 1);
     },
 
     prevStep() {
@@ -421,26 +485,30 @@ export default {
         tenure: '',
         positionFocus: '',
 
-        mostCommonCallReason: '',
-        otherCallReasons: '',
-        questionsCantAnswer: '',
+        systemTypes: '',
+        commonFailures: '',
+        failureIntervals: '',
 
-        newCustomerInfoNeeded: '',
-        serviceQuestionsAsked: '',
-        canScheduleConsultation: 'false',
-        consultationSchedulingBlockers: '',
+        inventoryVisibility: '',
+        partsRunOut: '',
+        inventoryTransfersRole: '',
+
+        quoteMisses: '',
+        quoteRevisions: '',
+        moreInvolvedInQuotes: '',
+        preScheduleInfo: '',
 
         realGreenUseful: '',
         realGreenFrustrations: '',
         realGreenMissing: '',
         accountInfoToKnow: '',
-        clientCareBetterExperience: '',
+        fountainsBetterExperience: '',
 
         meetInPerson: 'false',
         meetInPersonDetails: '',
         otherInput: '',
 
-        messageType: 'client-care-questions',
+        messageType: 'fountains-team-questions',
       };
     },
   },

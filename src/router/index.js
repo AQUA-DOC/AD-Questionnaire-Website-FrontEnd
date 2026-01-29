@@ -5,6 +5,7 @@ import BranchManagerQuestionnairePage from '../views/BranchManagerQuestionnaireP
 import RegionalManagerQuestionnairePage from '../views/RegionalManagerQuestionnairePage.vue'
 import FinanceTeamQuestionnairePage from '../views/FinanceTeamQuestionnairePage.vue'
 import ClientCareTeamQuestionnairePage from '../views/ClientCareTeamQuestionnairePage.vue'
+import FountainsTeamQuestionnairePage from '../views/FountainsTeamQuestionnairePage.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,12 @@ const router = createRouter({
             path: '/client-care-questionnaire',
             name: 'client-care-questions-page',
             component: ClientCareTeamQuestionnairePage,
+            props: route => ({})
+        },
+        {
+            path: '/fountains-team-questionnaire',
+            name: 'fountains-team-questions-page',
+            component: FountainsTeamQuestionnairePage,
             props: route => ({})
         }
     ]
