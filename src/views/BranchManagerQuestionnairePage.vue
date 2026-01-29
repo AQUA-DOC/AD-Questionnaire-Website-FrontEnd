@@ -650,11 +650,6 @@ submit() {
     gap: 12px;
   }
 
-  .field-row label {
-    width: 32%;
-    justify-content: flex-start;
-    margin-right: 8px;
-  }
 
   .actions {
     gap: 8px;
