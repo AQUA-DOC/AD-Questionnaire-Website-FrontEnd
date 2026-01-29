@@ -78,27 +78,27 @@
           <textarea
             v-model.trim="form.infoRequestFromOthers"
             rows="4"
-            placeholder="What do you need to ask others for?"
+            placeholder="What do you need to ask others for? What departments?"
           />
         </div>
 
-        <div class="field">
+        <!-- <div class="field">
           <label>Which departments?</label>
           <textarea
             v-model.trim="form.departmentsRequested"
             rows="3"
             placeholder="List departments or teams."
           />
-        </div>
+        </div> -->
 
-        <div class="field">
+        <!-- <div class="field">
           <label>Why?</label>
           <textarea
             v-model.trim="form.departmentsWhy"
             rows="4"
             placeholder="Why do you need to request this info and what is it used for?"
           />
-        </div>
+        </div> -->
       </div>
 
       <!-- VIEW 3 -->
@@ -325,8 +325,6 @@ export default {
         manualTracking: '',
         infoNeedNoAccess: '',
         infoRequestFromOthers: '',
-        departmentsRequested: '',
-        departmentsWhy: '',
 
         // Page 3 (General Continued)
         accountInfoWishVisible: '',
@@ -372,9 +370,7 @@ export default {
           this.form.frequentTasks.length > 0 &&
           this.form.manualTracking.length > 0 &&
           this.form.infoNeedNoAccess.length > 0 &&
-          this.form.infoRequestFromOthers.length > 0 &&
-          this.form.departmentsRequested.length > 0 &&
-          this.form.departmentsWhy.length > 0
+          this.form.infoRequestFromOthers.length > 0 
         );
       }
 
@@ -439,8 +435,6 @@ export default {
         this.form.manualTracking.length > 0 &&
         this.form.infoNeedNoAccess.length > 0 &&
         this.form.infoRequestFromOthers.length > 0 &&
-        this.form.departmentsRequested.length > 0 &&
-        this.form.departmentsWhy.length > 0 &&
         // Step 3
         this.form.accountInfoWishVisible.length > 0 &&
         this.form.inconsistentProcesses.length > 0 &&
