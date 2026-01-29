@@ -131,6 +131,7 @@
             <option value="2-days">2 days</option>
             <option value="7-days">7 days</option>
             <option value="14-days">14 days</option>
+            <option value="more-then-14-days">More than 14 days</option>
           </select>
         </div>
 
@@ -145,6 +146,7 @@
             <option value="2-days">2 days</option>
             <option value="7-days">7 days</option>
             <option value="14-days">14 days</option>
+            <option value="more-then-14-days">More than 14 days</option>
           </select>
         </div>
 

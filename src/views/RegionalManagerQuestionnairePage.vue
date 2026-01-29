@@ -124,6 +124,7 @@
             <option value="2-days">2 days</option>
             <option value="7-days">7 days</option>
             <option value="14-days">14 days</option>
+            <option value="more-then-14-days">More than 14 days</option>
           </select>
         </div>
 
@@ -138,6 +139,7 @@
             <option value="2-days">2 days</option>
             <option value="7-days">7 days</option>
             <option value="14-days">14 days</option>
+            <option value="more-then-14-days">More than 14 days</option>
           </select>
         </div>
 
@@ -149,16 +151,16 @@
               Existing Clients
             </label>
             <label class="radio">
-              <input type="radio" value="new-leads" v-model="form.salesOpportunitySource" />
-              New Leads
-            </label>
-            <label class="radio">
               <input type="radio" value="referrals" v-model="form.salesOpportunitySource" />
               Referrals
             </label>
             <label class="radio">
-              <input type="radio" value="consultations" v-model="form.salesOpportunitySource" />
-              Consultations
+              <input type="radio" value="pre-season-marketing" v-model="form.salesOpportunitySource" />
+              Pre-Season Marketing
+            </label>
+            <label class="radio">
+              <input type="radio" value="other" v-model="form.salesOpportunitySource" />
+              Other
             </label>
           </div>
         </div>
