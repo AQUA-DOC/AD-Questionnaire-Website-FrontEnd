@@ -527,8 +527,6 @@ export default {
         manualTracking: '',
         infoNeedNoAccess: '',
         infoRequestFromOthers: '',
-        departmentsRequested: '',
-        departmentsWhy: '',
 
         accountInfoWishVisible: '',
         inconsistentProcesses: '',

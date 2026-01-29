@@ -414,7 +414,7 @@ export default {
 
   .field-row label {
     width: 32%;
-    justify-content: flex-start;
+    justify-content: flex-end;
     margin-right: 8px;
   }
 
