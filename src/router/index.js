@@ -3,6 +3,7 @@ import RedirectHome from '../views/RedirectHome.vue'
 import RequestReportPage from '../views/RequestReportPage.vue'
 import BranchManagerQuestionnairePage from '../views/BranchManagerQuestionnairePage.vue'
 import RegionalManagerQuestionnairePage from '../views/RegionalManagerQuestionnairePage.vue'
+import FinanceTeamQuestionnairePage from '../views/FinanceTeamQuestionnairePage.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,12 @@ const router = createRouter({
             path: '/regional-manager-questionnaire',
             name: 'regional-manager-questions-page',
             component: RegionalManagerQuestionnairePage,
+            props: route => ({})
+        },
+        {
+            path: '/finance-team-questionnaire',
+            name: 'finance-team-questions-page',
+            component: FinanceTeamQuestionnairePage,
             props: route => ({})
         }
     ]

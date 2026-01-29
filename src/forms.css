@@ -23,7 +23,7 @@
 }
 
 .single-page {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100dvw;
   display: flex;
   justify-content: center;
@@ -41,6 +41,7 @@
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  margin: 5px;
 }
 
 .step {
