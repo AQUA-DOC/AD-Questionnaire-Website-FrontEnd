@@ -11,7 +11,6 @@
         <div class="success-modal">
           <h2>✅ Submitted</h2>
           <p>Thanks! Your responses have been submitted.</p>
-          <p>I will reach out directly to schedule a one-on-one follow-up.</p>
         </div>
       </div>
 
