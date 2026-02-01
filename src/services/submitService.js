@@ -1,22 +1,22 @@
 import axios from 'axios';
 
 // Uncommend for local testing
-const http = axios.create({
-    baseURL: "http://localhost:3000/backend",
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    }
-});
-
-// Uncomment for Production
 // const http = axios.create({
-//     baseURL: "https://aquadocinc.org/backend",
+//     baseURL: "http://localhost:3000/backend",
 //     headers: {
 //         'Accept': 'application/json',
 //         'Content-Type': 'application/json'
 //     }
 // });
+
+// Uncomment for Production
+const http = axios.create({
+    baseURL: "https://aquadocinc.org/backend",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+});
 
 
 
