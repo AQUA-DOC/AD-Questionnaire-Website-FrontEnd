@@ -65,6 +65,10 @@ const router = createRouter({
             name: 'general-questionnaire-page',
             component: GeneralQuestionnairePage,
             props: route => ({})
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            redirect: '/'
         }
     ]
 })
